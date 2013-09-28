@@ -1,80 +1,385 @@
-% LaTeX file for resume 
-% This file uses the resume document class (res.cls)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis-Styled CV
+% LaTeX Template
+% Version 1.0 (22/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati
+% 
+% Modified by Jasdeep Hundal for his own use
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{res} 
-\topmargin = -0.45in
-\oddsidemargin=-0.3in
-\textwidth=6.5in        %
-\setlength{\textheight}{10.5in} % increase text height to fit on 1-page 
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-\begin{document} 
+\documentclass[a4paper]{scrartcl}
+\areaset[15mm]{412pt}{657pt}
+\reversemarginpar % Move the margin to the left of the page 
 
-\name{Jasdeep Singh Hundal}     % the \\[12pt] adds a blank
-				        % line after name
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
 
-\address{jasdeep.singh.hundal@gmail.com}
-     
-\begin{resume}
-\vspace{-20pt}
-\section{\line(1,0){500}}
+\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+\usepackage[LabelsAligned,NoDate]{currvita} % Use the currvita style for the layout of the document
 
-\section{EDUCATION}
-    Cornell University, Ithaca, NY:
+\usepackage{multicol} % Used for the coursework section
 
-    Master of Engineering, Computer Science \\
-    Expected December 2014
 
-    Bachelor of Science, Computer Science w/ minors in Math and Applied Math \\
-    May 2012
+\definecolor{linkblue}{RGB}{65,105,225}
+\definecolor{blue}{RGB}{53,86,185}
 
-\section{RELEVANT COURSEWORK}
-    {\bf Taken:} Machine Learning, Algorithms, Large Scale Information Systems*, System Security*, Advanced Algorithms*, Data Structures, Object-Oriented Design/Programming, Functional Design/Programming, Operating Systems, Computer Organization/Systems Programming, Artificial Intelligence w/ Practicum, Databases w/ Practicum, Applicable Algebra (Encryption/Coding Theory), Structure of Info Networks*, Robot Learning, Autonomous Mobile Robots, Numerical Analysis, Mathematical Foundations for the Information Age, Computational Algebra, Behavioral Economics, Intermediate Microeconomics, Intermediate Boxing \\
-    {\bf Planned (Fall 2014):}  \\
-    {\footnotesize Note: A * indicates the course is taught at the graduate level}
+\renewcommand{\cvheadingfont}{\LARGE\color{blue}} % Font color of your name at the top
 
-\section{COOL COURSE PROJECTS}
-   Structure of Information Networks: Weighted network-based inference recommendation networks  \\        
-   Robot Learning: Monocular mapping in a carpeted indoor environment  \\
-   Artificial Intelligence: Bot for the game Arimaa \\
-   Machine Learning: Recommendations through topic modeling
+\usepackage{hyperref} % Required for adding links	and customizing them
+\hypersetup{colorlinks, breaklinks, urlcolor=linkblue, linkcolor=linkblue} % Set link colors
 
-%Relevant coursework
-\section{EXPERIENCE}
-   \vspace{-0.1in}	
-   \begin{tabbing}
-   \hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-    {\bf Engineering Intern} \>STMicroelectronics     \>May 2011 - August 2011\\
-   \end{tabbing}\vspace{-30pt}      % suppress blank line after tabbing
-   Worked on small team on Android middleware that will realize the full potential of next-generation MEMS sensors in mobile environments. Projects included debugging and writing a new API for a broken 3rd-party calibration library, writing a specialized data collection layer according to customer requirements, creating Android applications for sensor testing, and designing and implementing a threaded sensor HAL to enable sensor fusion for Android. Work shipped directly to STMicroelectronics customers for use on their chipsets.
-    \vspace{-10pt}
-   \begin{tabbing}
-   \hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-    {\bf Engineering Intern} \>Qualcomm Incorporated     \>June 2010 - December 2010\\
-   \end{tabbing}\vspace{-30pt}      % suppress blank line after tabbing
-   Developed simulator (from back-end to web configuration interface) for MediaFLO broadcast messages, in order to simplify testing procedures and shorten testing time for mobile devices. Created Android application and Perl scripts and modified Android system tools to automate performance testing of Snapdragon chipsets. Implemented OCR solution to automate reading of 3rd-party benchmark tools.
-    
-   
-\section{PROGRAMMING LANGUAGES AND COMPUTER SKILLS}          
-      Preferred: C, C++, Python, Matlab \\
-      Experienced: Java, Perl, Android \\
-      Familiar: Django, SQL, OCaml, Pthreads, UNIX Shell Scripting, Subversion, Git
-\pagebreak
-\section{EXTRACURRICULAR ACTIVITIES}
-    Vice President of Cornell Association of Computer Science Undergraduates \\
-    Team member, Autonomous Aerial Vehicles (machine learning project w/ Professor Ashutosh Saxena) \\
-    Tutor/Team Lead, Rural Schools Mathematics Tutoring Program, Cornell University \\
-    Lead, Math Explorer's Project
+\newlength{\datebox}\settowidth{\datebox}{Expected Dec 2014} % Set the width of the date box in each block
 
-\section{HONORS AND AWARDS}
-    \vspace{-0.1in}
-    \begin{tabbing}
-    \hspace{5.25in}\=\kill
-    1\textsuperscript{st} at Cornell in Microsoft College Puzzle Challenge\>Spring 2012 \\
-    1\textsuperscript{st} at Cornell's Facebook Hackathon - Multiplayer Online Tower Defense\>Spring 2012 \\
-    2\textsuperscript{nd} at Cornell's Facebook Hackathon - ``Plannit'' website\>Spring 2011 \\
-    National Merit Finalist\>Spring 2008 \\
-    American Invitation Mathematics Examination qualifier\>Spring 2007
-    \end{tabbing}
- 
-\end{resume}
+
+\newcommand{\NewSectionHeading}[1]{\noindent\color{blue}\spacedlowsmallcaps{#1}\vspace{1em}\color{Black}} % Define a command for new section headings (this is mostly so I don't have to type the color again and again)
+
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.5em}} % Add some white space after each new entry
+
+\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty} % Stop the page count at the bottom of the first page
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{cv}{\spacedallcaps{Jasdeep Singh Hundal}}\vspace{1.5em} % Your name
+
+\noindent\spacedlowsmallcaps{Contact}\vspace{0.5em} % Contact information heading
+
+\NewEntry{email}{\href{mailto:jasdeep.singh.hundal@gmail.com}{jasdeep.singh.hundal@gmail.com}} % Email address
+
+\NewEntry{website}{\href{http://www.jasdeephundal.com}{www.jasdeephundal.com}} % Personal website
+
+\vspace{1em} % Extra white space between the personal information section and goal
+
+\noindent\spacedlowsmallcaps{About}\vspace{1em}
+
+\Description{A generalist backend software engineer who can dive into just about any project. I particularly enjoy developing distributed systems and working on machine learning projects.}\vspace{2em} % Goal text
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Work Experience}
+
+\NewEntry{Aug 2012--Present}{\textsc{Nebula, Mountain View, CA}}
+
+\Description{\MarginText{Software Engineer}Developed multiple components of a turnkey private cloud system.\newline
+\vspace{-1.2em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Developed and maintained a distributed object store.
+    \item Developed new features for Nebula Cosmos cloud operating system by leveraging OpenStack APIs.
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\NewEntry{Jun 2012--Aug 2012}{\textsc{Nebula, Palo Alto, CA}}
+
+\Description{\MarginText{Technical Intern}Created software solutions for several pieces of a private cloud solution. Hired as a full-time employee at the end of the internship.\newline
+\vspace{-1.2em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Utilized Apache Zookeeper and related open source projects to improve consensus for various systems.
+    \item Contributed new features to Nebula's OpenStack orchestration software
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\NewEntry{May 2011--Aug 2011}{\textsc{STMicroelectronics, Santa Clara, CA}}
+
+\Description{\MarginText{Engineering Intern}Worked on small team on Android middleware that will realize the full potential of next-generation MEMS sensors in mobile environments. \newline
+\vspace{-1.2em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Debugged and wrote a new API for a broken 3rd-party calibration library written in C.
+    \item Processed customer requirements to develop a specialized data collection layer
+    \item Created Android applications for testing sensors such as accelerometers and magnetometers
+    \item Designed and implemented a threaded sensor HAL to enable sensor fusion for Android using C and the POSIX Threads API.
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\NewEntry{Jun 2010--Dec 2010}{\textsc{Qualcomm, San Diego, CA}}
+
+\Description{\MarginText{Interim Engineering Intern}Developed a range of testing solutions for both the MediaFLO and CDMA Technologies (QCT) divisions.
+\newline
+\vspace{-1.2em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Developed simulator (from backend to web configuration interface) for MediaFLO broadcast messages, in order to simplify testing procedures and shorten testing time for mobile devices.
+    \item Created Android application and Perl scripts and modified Android system tools to automate performance testing of Snapdragon chipsets.
+    \item Implemented OCR solution to automate reading of 3rd-party benchmark tools.
+\end{itemize}
+}
+
+%------------------------------------------------
+
+\NewEntry{Jun 2007--Dec 2007}{\textsc{Jack-in-the-Box, Fremont, CA}}
+
+\Description{\MarginText{Customer Service}I took orders all day long.
+}
+
+%------------------------------------------------
+
+\vspace{1em} % Extra space between major sections
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Education}
+
+\NewEntry{Expected Dec 2014}{Cornell University}
+
+\Description{\MarginText{Master of Engineering}{\bf Field:} Computer Science\newline
+Currently on leave while working.\newline
+}
+
+%------------------------------------------------
+
+\NewEntry{May 2012}{Cornell University}
+
+\Description{\MarginText{Bachelor of Science}{\bf Major:} Computer Science\newline
+{\bf Minors:} Mathematics, Applied Mathematics\newline
+{\bf Specializations:} Theory, Network Science, Machine Learning\newline
+{\bf Coursework:} (An asterisk indicates graduate level coursework): \newline
+\vspace{-2.0em}
+\begin{multicols}{2}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Machine Learning
+    \item Algorithms
+    \item Large Scale Information Systems*
+    \item System Security*
+    \item Advanced Algorithms*
+    \item Data Structures
+    \item Object-Oriented Design/Programming
+    \item Functional Design/Programming
+    \item Operating Systems
+    \item Computer Organization/Systems Programming
+    \item Artificial Intelligence w/ Practicum
+    \item Databases w/ Practicum
+    \item Applicable Algebra (Encryption/Coding Theory)
+    \item Groups \& Geometry
+    \item Structure of Information Networks*
+    \item Robot Learning
+    \item Autonomous Mobile Robots
+    \item Numerical Analysis
+    \item Mathematical Foundations for the Information Age
+    \item Computational Algebra
+    \item Behavioral Economics
+    \item Intermediate Microeconomics
+    \item Introduction to Game Theory
+    \item Intermediate Boxing
+\end{itemize}
+\end{multicols}
+}
+
+\vspace{0em} % Usually extra space between major sections, but multicols takes care of that
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Cool Projects}
+
+\Description{\href{http://www.cs.cornell.edu/Courses/cs4758/2013sp/final\%20project/hung_dang.pdf}{Monocular Mapping in a Carpeted Indoor Environment}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Developed a system for accurate indoor obstacle mapping using a single video camera mounted on a robot as the only input device.
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{Recommendations Through Topic Modeling
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Applied topic modeling for document collections to the problem of making music recommendations.
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{\href{http://sohanjain.com/portfolio/jain-terkelsen-hundal-network-based-inference/}{Weighted Network-based Inference Recommendation Networks}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Expanded on a recommendation technique that made use of a bipartite interaction graph, slightly improved performance
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{Arimaa Bot
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Created somewhat competent AI for the game Arimaa, which specifically designed to be difficult for machines.
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{Team member, Autonomous Aerial Vehicles
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Wrote simulations for image classification tasks that used a specialized low-power neural network processer.
+    \item Assisted with field experiments.
+\end{itemize}}
+
+%------------------------------------------------
+
+\vspace{1em} % Extra space between major sections
+
+%------------------------------------------------
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	LEADERSHIP AND VOLUNTEER EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Leadership and Volunteer Experience}
+
+\Description{\MarginText{Leadership}2011--2012\ \ $\cdotp$\ \ Vice President, Association of Computer Science Undergraduates\\[0.05in]\hspace{0.30in}Elected to help lead of the Cornell ACM branch for undergraduates.
+\newline
+\vspace{-1.0em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Organized several recruiting sessions, procuring food, presentation materials, and lecture hall reservations as the point of contact with corporate recruiters, as well as ensuring adequate advertising for the event.
+    \item Acted as first contact for any recruiting session needing emergency resources.
+    \item Planned budget allocations, special events, and the future direction of the club along with other offices to serve the ACSU mission of enhancing the undergraduate computer science experience.
+    \item Organized after-midterm cookies and milk sessions for undergraduates.
+    \item Created and organized ACSU peer mentoring program, matching new students with upperclassmen mentors with similar interests and career plans.
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{\MarginText{Volunteer Experience}2010--2011\ \ $\cdotp$\ \ Tutor/Team Lead, Rural Schools Math Tutoring Program
+\vspace{-0.0em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Tutored junior high students struggling to learn state math standards.
+    \item Coordinated small team to ensure that we had enough tutors and transportation on a weekly basis.
+\end{itemize}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{Summer 2006, 2007\ \ $\cdotp$\ \ Volunteer, Wesley Gordon Fossil Hall
+\vspace{-0.0em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Labeled and cataloged fossils not yet ready for display.
+    \item Organized collection of paleontology research to assist in fossil identification.
+    \item Added color and pictures to displays and wrote new fossil descriptions to make
+museum kid-friendly.
+\end{itemize}}
+
+%------------------------------------------------
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Programming Languages and Skills}
+
+\Description{\MarginText{Preferred}\textsc{java}, OpenStack}
+
+\Description{\MarginText{Experienced}\textsc{python}, Git, Linux Administration, Unix Shell Scripting}
+
+\Description{\MarginText{Familiar}\textsc{C}, \textsc{C++}, \textsc{MATLAB}, \textsc{PERL}, \textsc{SQL}, \textsc{OCaml}, Android, Amazon Web Services (including EMR), \LaTeX, Subversion, \textsc{HTML}}
+
+%------------------------------------------------
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	HONORS & AWARDS
+%----------------------------------------------------------------------------------------
+
+\NewSectionHeading{Honors and Awards}
+
+\Description{\MarginText{Hackathons}2012\ \ $\cdotp$\ \ Participated in Facebook Hackathon Finals, created an browser-based \\ \hspace{0.43in}\href{https://github.com/dsjas297/Awesome-Possums}{DDR clone} using HTML5 video capabilities}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2012\ \ $\cdotp$\ \ 1\textsuperscript{st} at the Cornell Facebook Hackathon with \href{http://www.jasdeephundal.com/projects/\#Ezra\%20Tower\%20Defense}{Ezra Tower Defense}}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2010\ \ $\cdotp$\ \ 2\textsuperscript{nd} at the Cornell Facebook Hackathon with \href{http://www.jasdeephundal.com/projects/\#Plannit}{Plannit}}
+
+%------------------------------------------------
+
+\vspace{1em}
+
+\Description{\MarginText{Academic}2008\ \ $\cdotp$\ \ National Merit Finalist}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2008\ \ $\cdotp$\ \ Ellis Memorial Scholarship\newline\hphantom{2008\ \ $\cdotp$\ } National Association of Letter Carriers, Branch 1111}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2008\ \ $\cdotp$\ \ National AP Scholar}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2007\ \ $\cdotp$\ \ American Invitational Mathematics Examination qualifier}
+
+%----------------------------------------------------------------------------------------
+
+\vspace{1em}
+
+\Description{\MarginText{Other}2012\ \ $\cdotp$\ \ 1\textsuperscript{st} at Cornell at the Microsoft College Puzzle Challenge}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2010\ \ $\cdotp$\ \ 1\textsuperscript{st} at Cornell in the Windward Code War}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2010\ \ $\cdotp$\ \ 3\textsuperscript{rd} at Cornell in Lockheed Martin Coding Challenge}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{2010\ \ $\cdotp$\ \ 3\textsuperscript{rd} at Cornell at the Microsoft College Puzzle Challenge}
+
+%----------------------------------------------------------------------------------------
+
+\end{cv}
+
 \end{document}
