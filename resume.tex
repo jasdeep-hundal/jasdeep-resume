@@ -66,15 +66,10 @@
 
 \NewEntry{email}{\href{mailto:jasdeep.singh.hundal@gmail.com}{jasdeep.singh.hundal@gmail.com}} % Email address
 
-\NewEntry{website}{\href{http://www.jasdeephundal.com}{www.jasdeephundal.com}} % Personal website
-
 \NewEntry{github}{\href{https://www.github.com/jasdeep-hundal}{jasdeep-hundal}} % Github
 
 \vspace{1em} % Extra white space between the personal information section and goal
 
-\noindent\spacedlowsmallcaps{About}\vspace{1em}
-
-\Description{A generalist backend software engineer who loves new challenges and can dive into just about any task. I particularly enjoy developing scalable distributed systems and infrastructure projects.}\vspace{2em} % Goal text
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
@@ -89,10 +84,9 @@
 \begin{itemize}
 \newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
 \renewcommand{\labelitemi}{\localtextbulletone}
-    \item Improved ability to debug Python components: Implemented a network logger so that related processes could safely output to one log file. Added functionality to dump Python stack traces on uncaught exceptions and added a signal handler to dump Python thread state.
+    \item Improved ability to debug Python components: Implemented a network logger and added functionality to dump Python stack traces and thread state upon both receiving a user signal and exiting on an uncaught exception.
     \item Restructured and rewrote module for generating customer support bundles. Significantly reduced dependencies on other parts of the system to minimize the probability of failure.
-    \item Audited codebase to identify areas where common functionality could be extracted and centralized,  refactoring the most common operations into a set of utility modules. 
-    \item Developed utilities to validate Protocol Buffer changes and data migrations across version upgrades.
+    \item Audited codebase to extract common operations into a set of utility modules.
     \item Worked to ensure the stability and functionality for the containerized version of the load balancer control plane, intended for use in Docker environments.
 \end{itemize}
 }
@@ -111,17 +105,16 @@
     \item Integrated LDAP into OpenStack Keystone as an authentication backend.
     \item Designed and implemented test plans for breaking distributed systems. Developed a new QA infrastructure that dramatically sped up bug discovery.
     \item Debugged complex distributed systems in virtualized environments, working often alongside field engineering and occasionally at customer sites in order to resolve customer issues.
-    \item Contributed code to make more OpenStack features available to the Apache JClouds cloud services library.
+    \item Added to the OpenStack feature coverage of the Apache JClouds library.
     \item Interviewed engineering team candidates.
 \end{itemize}
 }
 
 %------------------------------------------------
-\newpage
 
 \NewEntry{Jun 2012--Aug 2012}{\textsc{Nebula, Palo Alto, CA}}
 
-\Description{\MarginText{Technical Intern}Created software solutions for several pieces of a private cloud solution. Hired as a full-time employee at the end of the internship.\newline
+\Description{\MarginText{Technical Intern}Created software solutions for several pieces of a private cloud solution.\newline
 \vspace{-1.2em}
 \begin{itemize}
 \newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
@@ -140,8 +133,7 @@
 \begin{itemize}
 \newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
 \renewcommand{\labelitemi}{\localtextbulletone}
-    \item Debugged and wrote a new API for a broken 3rd-party calibration library written in C.
-    \item Processed customer requirements to develop a specialized data collection layer
+    \item Debugged and wrote a new API for a broken 3rd-party calibration library.
     \item Created Android applications for testing sensors such as accelerometers and magnetometers
     \item Designed and implemented a threaded sensor HAL to enable sensor fusion for Android using C and the POSIX Threads API.
 \end{itemize}
@@ -157,9 +149,9 @@
 \begin{itemize}
 \newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
 \renewcommand{\labelitemi}{\localtextbulletone}
-    \item Developed simulator (from backend to web configuration interface) for MediaFLO broadcast messages, in order to simplify testing procedures and shorten testing time for mobile devices.
-    \item Created Android application and Perl scripts and modified Android system tools to automate performance testing of Snapdragon chipsets.
-    \item Implemented OCR solution to automate reading of 3rd-party benchmark tools.
+    \item Developed simulator (from backend to web configuration interface) for MediaFLO broadcast messages, simplifying testing procedures and shortening testing time for mobile devices.
+    \item Modified Android system tools to automate performance testing of chipsets.
+    \item Implemented OCR solution to automate reading of 3rd-party benchmarks.
 \end{itemize}
 }
 
@@ -173,186 +165,6 @@
 %------------------------------------------------
 
 \vspace{1em} % Extra space between major sections
-\newpage
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-
-\NewSectionHeading{Education}
-
-\NewEntry{January 2015}{Cornell University}
-
-\Description{\MarginText{Master of Engineering}{\bf Field:} Computer Science\newline
-{\bf Teaching:} Selected as teaching assistant for operating systems course. Duties included holding office hours, grading, and writing exam questions.\newline
-{\bf Coursework:} (all taught at graduate level) \newline
-\vspace{-2.0em}
-\begin{multicols}{2}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Advanced Algorithms
-    \item Large Scale Information Systems
-    \item System Security
-    \item Evolutionary Algorithms
-    \item Programming Languages
-    \item High Performance Systems/Networking
-    \item Entrepreneurship for Engineers
-\end{itemize}
-\end{multicols}
-}
-
-%------------------------------------------------
-
-\NewEntry{May 2012}{Cornell University}
-
-\Description{\MarginText{Bachelor of Science}{\bf Major:} Computer Science\newline
-{\bf Minors:} Mathematics, Applied Mathematics\newline
-{\bf Coursework:} (An asterisk indicates graduate level coursework) \newline
-\vspace{-2.0em}
-\begin{multicols}{2}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Machine Learning
-    \item Algorithms
-    \item Data Structures
-    \item Object-Oriented Programming
-    \item Functional Programming
-    \item Operating Systems
-    \item Computer Organization/Systems Programming
-    \item Artificial Intelligence w/ Practicum
-    \item Databases w/ Practicum
-    \item Applicable Algebra (Encryption/Coding Theory)
-    \item Groups \& Geometry
-    \item Structure of Information Networks*
-    \item Robot Learning
-    \item Autonomous Mobile Robots
-    \item Numerical Analysis
-    \item Mathematical Foundations for the Information Age
-    \item Computational Algebra
-    \item Behavioral Economics
-    \item Intermediate Microeconomics
-    \item Introduction to Game Theory
-    \item Intermediate Boxing
-\end{itemize}
-\end{multicols}
-}
-
-\vspace{0em} % Usually extra space between major sections, but multicols takes care of that
-
-%----------------------------------------------------------------------------------------
-%	PROJECTS
-%----------------------------------------------------------------------------------------
-
-\NewSectionHeading{Cool Projects}
-
-\Description{OpenStack Neutron Setup for Supercloud
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Developed initial framework for using OpenStack Neutron for network configuration in Professor Hakim Weatherspoon's Supercloud project.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{\href{http://www.cs.cornell.edu/Courses/cs4758/2013sp/final\%20project/hung_dang.pdf}{Monocular Mapping in a Carpeted Indoor Environment}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Developed a system for accurate indoor obstacle mapping using a single video camera mounted on a robot as the only input device.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{Recommendations Through Topic Modeling
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Applied topic modeling for document collections to the problem of making music recommendations.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{\href{http://sohanjain.com/portfolio/jain-terkelsen-hundal-network-based-inference/}{Weighted Network-based Inference Recommendation Networks}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Expanded on a recommendation technique that made use of a bipartite interaction graph, slightly improved performance
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{Arimaa Bot
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Created somewhat competent AI for the game Arimaa, which specifically designed to be difficult for machines.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{Team member, Autonomous Aerial Vehicles
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Wrote simulations for image classification tasks that used a specialized low-power neural network processer.
-\end{itemize}}
-
-%------------------------------------------------
-
-\vspace{1em} % Extra space between major sections
-
-%------------------------------------------------
-
-\newpage
-
-%----------------------------------------------------------------------------------------
-%	LEADERSHIP AND VOLUNTEER EXPERIENCE
-%----------------------------------------------------------------------------------------
-
-\NewSectionHeading{Leadership and Volunteer Experience}
-
-\Description{\MarginText{Leadership}2011--2012\ \ $\cdotp$\ \ Vice President, Association of Computer Science Undergraduates\\[0.05in]\hspace{0.30in}Elected to help lead the local Cornell ACM branch for undergraduates.
-\newline
-\vspace{-1.0em}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Organized several recruiting sessions, procuring food, presentation materials, and lecture hall reservations as the point of contact with corporate recruiters, as well as ensuring adequate advertising for the event.
-    \item Acted as first contact for any recruiting session needing emergency resources.
-    \item Planned budget allocations, special events, and the future direction of the club along with other offices to serve the ACSU mission of enhancing the undergraduate computer science experience.
-    \item Organized after-midterm cookies and milk sessions for undergraduates.
-    \item Created and organized ACSU peer mentoring program, matching new students with upperclassmen mentors with similar interests and career plans.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{\MarginText{Volunteer Experience}2010--2011\ \ $\cdotp$\ \ Tutor/Team Lead, Rural Schools Math Tutoring Program
-\vspace{-0.0em}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Tutored junior high students struggling to learn state math standards.
-    \item Coordinated small team to ensure that we had enough tutors and transportation on a weekly basis.
-\end{itemize}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{Summer 2006, 2007\ \ $\cdotp$\ \ Volunteer, Wesley Gordon Fossil Hall
-\vspace{-0.0em}
-\begin{itemize}
-\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
-    \item Labeled and cataloged fossils not yet ready for display.
-    \item Organized collection of paleontology research to assist in fossil identification.
-    \item Added color and pictures to displays and wrote new fossil descriptions to make
-museum kid-friendly.
-\end{itemize}}
-
-%------------------------------------------------
-
-\vspace{0.8em} % Extra space between major sections
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
@@ -366,52 +178,38 @@ museum kid-friendly.
 
 \Description{\MarginText{Familiar}Docker, Mesos, \textsc{C}, \textsc{C++}, \textsc{MATLAB}, \textsc{PERL}, \textsc{SQL}, \textsc{OCaml}, virsh, LVM, network tools (including tcpdump, dig, nmap, etc.), LibGuestFS, Linux Administration, Android, Amazon Web Services (including EMR), \LaTeX, Subversion, \textsc{HTML}}
 
-%------------------------------------------------
+\vspace{1em} % Extra space between major sections
 
-\vspace{0.8em} % Extra space between major sections
+%------------------------------------------------
 
 %----------------------------------------------------------------------------------------
-%	HONORS & AWARDS
+%	EDUCATION
 %----------------------------------------------------------------------------------------
 
-\NewSectionHeading{Honors and Awards}
+\NewSectionHeading{Education}
+
+\NewEntry{January 2015}{Cornell University}
+
+\Description{\MarginText{Master of Engineering}{\bf Field:} Computer Science\newline
+{\bf Teaching:} Recognized with a teaching assistant award for efforts in ensuring that a 300+ student operating systems class ran smoothly. Duties included holding office hours, grading, and writing exam questions.\newline
+}
 
 %------------------------------------------------
 
-\Description{\MarginText{Teaching}2015\ \ $\cdotp$\ \ Recognized with a teaching assistant award for efforts in ensuring that \\ \hspace{0.4in} a 300+ student operating systems class ran smoothly.}
+\NewEntry{May 2012}{Cornell University}
 
-\vspace{0.7em}
-
-\Description{\MarginText{Competitions}2012\ \ $\cdotp$\ \ Participated in Facebook Hackathon Finals, created a browser-based \\ \hspace{0.43in}\href{https://github.com/dsjas297/Awesome-Possums}{DDR clone} using HTML5 video capabilities}
-
-\vspace{-0.5em}
-\Description{2012\ \ $\cdotp$\ \ 1\textsuperscript{st} at Cornell at the Microsoft College Puzzle Challenge}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{2012\ \ $\cdotp$\ \ 1\textsuperscript{st} at the Cornell Facebook Hackathon with \href{http://www.jasdeephundal.com/projects/\#Ezra\%20Tower\%20Defense}{Ezra Tower Defense}}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{2010\ \ $\cdotp$\ \ 2\textsuperscript{nd} at the Cornell Facebook Hackathon with \href{http://www.jasdeephundal.com/projects/\#Plannit}{Plannit}}
-
-%------------------------------------------------
-
-\vspace{0.7em}
-
-\Description{\MarginText{Academic}2008\ \ $\cdotp$\ \ National Merit Finalist}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{2008\ \ $\cdotp$\ \ Ellis Memorial Scholarship\newline\hphantom{2008\ \ $\cdotp$\ } National Association of Letter Carriers, Branch 1111}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{2008\ \ $\cdotp$\ \ National AP Scholar}
-
-\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
-
-\Description{2007\ \ $\cdotp$\ \ American Invitational Mathematics Examination qualifier}
+\Description{\MarginText{Bachelor of Science}{\bf Major:} Computer Science\newline
+{\bf Minors:} Mathematics, Applied Mathematics\newline
+{\bf Specializations:} Theory, Network Science, Machine Learning\newline
+{\bf Extracurricular Activities:}\newline
+\vspace{-1.2em}
+\begin{itemize}
+\newcommand{\localtextbulletone}{\textcolor{blue}{\raisebox{0.40ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+    \item Elected to serve as Vice President of the Association of Computer Science Undergraduates. Organized recruiting talks and social events, planned budget allocations, and launched a peer mentoring program.
+     \item Served as a tutor and team lead for the Rural Schools Math Tutoring Program. Tutored junior high students who were struggling to learn state math standards and coordinated a small team to ensure that we had enough tutors and transportation on a weekly basis.
+\end{itemize}
+}
 
 %----------------------------------------------------------------------------------------
 
